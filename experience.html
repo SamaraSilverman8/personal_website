@@ -16,14 +16,16 @@
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       padding: 40px;
-      max-width: 1000px;
-      margin: auto;
+      justify-content: center;
     }
 
     .photo-card {
       position: relative;
       perspective: 1000px;
       aspect-ratio: 1 / 1;
+      max-width: 300px; /* ✅ limits how wide the cards get */
+      width: 100%;
+      margin: 0 auto; 
     }
 
     .flip-inner {
