@@ -13,44 +13,62 @@
     }
     .grid-container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       padding: 40px;
-      max-width: 800px;
-      grid-auto-rows: 600px;
+      max-width: 1000px;
       margin: auto;
     }
+
     .photo-card {
-       height: auto;
-       aspect-ratio: 1 / 1;  
+      position: relative;
+      perspective: 1000px;
+      aspect-ratio: 1 / 1;
     }
+
     .flip-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.6s;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
     }
+
     .photo-card:hover .flip-inner {
-    transform: rotateY(180deg);
+      transform: rotateY(180deg);
     }
+
     .flip-front,
     .flip-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    overflow: hidden;
-    border-radius: 10px; /* ✅ Moved here */
-    box-sizing: border-box; /* ✅ Ensures padding/border are included */
-  }
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
 
     .flip-front img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block; /* ✅ Prevents spacing below the image */
-  }
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .flip-back {
+      background-color: #f9f9f9;
+      color: #003366;
+      transform: rotateY(180deg);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      border: 1px solid #ccc;
+    }
      /* Top Navigation Menu */
     .navbar {
       background-color: #004080; /* dark blue */
