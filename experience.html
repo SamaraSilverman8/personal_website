@@ -1,1 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Samara Silverman</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .photo-card {
+      position: relative;
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .photo-card img:hover {
+      transform: scale(1.05);
+    }
+
+    .hidden-text {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Work Experience</h1>
+
+<div class="grid-container">
+  
+  <!-- Photo 1 -->
+  <div class="photo-card">
+    <img src="photo1.jpg" alt="Photo 1" onclick="toggleText('text1')">
+    <div id="text1" class="hidden-text">
+      first text box
+    </div>
+  </div>
+
+  <!-- Photo 2 -->
+  <div class="photo-card">
+    <img src="photo2.jpg" alt="Photo 2" onclick="toggleText('text2')">
+    <div id="text2" class="hidden-text">
+      second text box.
+    </div>
+  </div>
+
+  <!-- Photo 3 -->
+  <div class="photo-card">
+    <img src="photo3.jpg" alt="Photo 3" onclick="toggleText('text3')">
+    <div id="text3" class="hidden-text">
+      third text box.
+    </div>
+  </div>
+
+  <!-- Photo 4 -->
+  <div class="photo-card">
+    <img src="photo4.jpg" alt="Photo 4" onclick="toggleText('text4')">
+    <div id="text4" class="hidden-text">
+      fourth text box.
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function toggleText(id) {
+    var textBox = document.getElementById(id);
+    if (textBox.style.display === "none") {
+      textBox.style.display = "block";
+    } else {
+      textBox.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>
 
