@@ -11,42 +11,24 @@
       padding: 0;
       text-align: center;
     }
+
     .grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* exactly 2 columns */
-    gap: 20px;
-    padding: 40px;
-    max-width: 700px;
-    margin: 0 auto;
-    justify-items: center; /* center cards inside their grid cell */
-}
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 40px;
+      max-width: 700px;
+      margin: 0 auto;
+      justify-items: center;
+    }
 
-@media (max-width: 650px) {
-  .grid-container {
-    grid-template-columns: 1fr; /* stack on small screens */
-  }
-}
-
- @media (max-width: 650px) {
-  .flip-back {
-    font-size: 0.65rem;
-    padding: 10px;
-    overflow-y: auto;
-    word-wrap: break-word;
-    line-height: 1.2;
-    max-height: 100%;
-    overflow-y: auto;
-  }
-}
-
-
-.photo-card {
-  position: relative;
-  perspective: 1000px;
-  width: 100%;
-  max-width: 300px;
-  aspect-ratio: 1 / 1;
-}
+    .photo-card {
+      position: relative;
+      perspective: 1000px;
+      width: 100%;
+      max-width: 300px;
+      aspect-ratio: 1 / 1;
+    }
 
     .flip-inner {
       position: relative;
@@ -90,17 +72,20 @@
       align-items: center;
       justify-content: center;
       font-size: 0.95rem;
+      overflow-y: auto;
+      line-height: 1.3;
     }
-     /* Top Navigation Menu */
+
+    /* Navigation Bar */
     .navbar {
-      background-color: #004080; /* dark blue */
+      background-color: #004080;
       overflow: hidden;
       display: flex;
       justify-content: center;
     }
 
     .navbar a {
-      color: #cce6ff; /* light blue */
+      color: #cce6ff;
       padding: 14px 20px;
       text-decoration: none;
       display: block;
@@ -109,82 +94,103 @@
     }
 
     .navbar a:hover {
-      background-color: #0059b3; /* brighter blue */
+      background-color: #0059b3;
     }
 
     .content {
       padding: 40px;
       text-align: center;
-      color: #003366; /* dark blue text */
+      color: #003366;
     }
-    
+
+    /* Mobile Fix */
+    @media (max-width: 650px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      .flip-back {
+        font-size: 0.65rem !important;
+        padding: 10px !important;
+        line-height: 1.2;
+        overflow-y: auto;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .flip-back {
+        font-size: 0.6rem !important;
+        padding: 8px !important;
+      }
+    }
   </style>
 </head>
-  
+
 <body>
 
-<!-- Navigation Bar -->
+  <!-- Navigation Bar -->
   <div class="navbar">
     <a href="index.html">Home</a>
     <a href="experience.html">Experience</a>
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
   </div>
-  
+
   <div class="content">
-  <h1>Experience</h1>
+    <h1>Experience</h1>
+    <div class="grid-container">
 
-  <div class="grid-container">
-  
-  <!-- Photo 1 -->
-<div class="photo-card">
-  <div class="flip-inner">
-    <div class="flip-front">
-      <img src="MS_logo.jpg" alt="Photo 1">
-    </div>
-    <div class="flip-back">
-      This summer, I will be joining Morgan Stanley as a Quantitative Risk Management intern in the NYC office.
+      <!-- Photo 1 -->
+      <div class="photo-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="MS_logo.jpg" alt="Photo 1">
+          </div>
+          <div class="flip-back">
+            This summer, I will be joining Morgan Stanley as a Quantitative Risk Management intern in the NYC office.
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo 2 -->
+      <div class="photo-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="BNP_logo.jpg" alt="Photo 2">
+          </div>
+          <div class="flip-back">
+            In Summer 2024, I worked at BNP Paribas as a Global Markets Sales and Trading Intern. I rotated on the Equity Derivatives Index Flow Trading and Structured Credit desks. For my main project, I developed a tool using VBA and Excel that extracts Bloomberg data and compares bond and credit default swap spreads to identify opportunities to trade basis and credit-linked notes. I also researched and presented pitches on an options calendar strangle and a bond-CDS basis trade.
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo 3 -->
+      <div class="photo-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="Macquarie_logo.jpg" alt="Photo 3">
+          </div>
+          <div class="flip-back">
+            In Summer 2023, I worked at Macquarie as a Public Investments Intern in the Fixed Income – Derivatives Group. My intern project involved revamping a trade blotter to improve organization, tracking, and statistical analysis capabilities. Additionally, I created visualizations for quarterly reports using Excel and VBA. I gained exposure to investment strategies across equities and fixed income, over-the-counter derivative trading, and various derivative structures and market indices.
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo 4 -->
+      <div class="photo-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="CDS_logo.png" alt="Photo 4">
+          </div>
+          <div class="flip-back">
+            I have been a member of Cornell Data Science Project Team on the Quantitative Finance Subteam for four years. We collaborate on projects that use a data-driven and statistical approach to develop trading strategies. I was Finance and Corporate Chair for 3 semesters. In this role, I implemented a $20,000 budget for our 70+ member team and maintained relationships with corporate sponsors.
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-</div>
-
-<!-- Photo 2 -->
-<div class="photo-card">
-  <div class="flip-inner">
-    <div class="flip-front">
-      <img src="BNP_logo.jpg" alt="Photo 2">
-    </div>
-    <div class="flip-back">
-      In Summer 2024, I worked at BNP Paribas as a Global Markets Sales and Trading Intern. I rotated on the Equity Derivatives Index Flow Trading and Structured Credit desks. For my main project, I developed a tool using VBA and Excel that extracts Bloomberg data and compares bond and credit default swap spreads to identify opportunities to trade basis and credit-linked notes. I also researched and presented pitches on an options calendar strangle and a bond-CDS basis trade.
-    </div>
-  </div>
-</div>
-
-<!-- Photo 3 -->
-<div class="photo-card">
-  <div class="flip-inner">
-    <div class="flip-front">
-      <img src="Macquarie_logo.jpg" alt="Photo 3">
-    </div>
-    <div class="flip-back">
-      In Summer 2023, I worked at Macquarie as a Public Investments Intern in the Fixed Income – Derivatives Group. My intern project involved revamping a trade blotter to improve organization, tracking, and statistical analysis capabilities. Additionally, I created visualizations for quarterly reports using Excel and VBA. I gained exposure to investment strategies across equities and fixed income, over-the-counter derivative trading, and various derivative structures and market indices.
-    </div>
-  </div>
-</div>
-
-<!-- Photo 4 -->
-<div class="photo-card">
-  <div class="flip-inner">
-    <div class="flip-front">
-      <img src="CDS_logo.png" alt="Photo 4">
-    </div>
-    <div class="flip-back">
-      I have been a member of Cornell Data Science Project Team on the Quantitative Finance Subteam for four years. We collaborate on projects that use a data-driven and statistical approach to develop trading strategies. I was Finance and Corporate Chair for 3 semesters. In this role, I implemented a $20,000 budget for our 70+ member team and maintained relationships with corporate sponsors. 
-    </div>
-  </div>
-</div>
-     </div>
-
 
 </body>
 </html>
